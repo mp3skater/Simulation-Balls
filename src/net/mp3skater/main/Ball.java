@@ -7,26 +7,26 @@ public class Ball {
     // VARIABLES
     private final double[] pos;
     private final double[] vec;
-    private final int r;
+    private final int size;
 
     // COLOR
     private final BallColor ballColor;
 
     // CONSTRUCTOR
-    public Ball(double x, double y, double vecX, double vecY, int radius, BallColor ballColor) {
+    public Ball(double x, double y, double vecX, double vecY, int size, BallColor ballColor) {
 
         pos = new double[]{x, y};
         vec = new double[]{vecX, vecY};
-        r = radius;
+        this.size = size;
         this.ballColor = ballColor;
     }
 
     // DRAW
     public void draw(Graphics2D g2) {
         g2.setColor(ballColor.color);
-        g2.fillOval((int) this.getX(),(int) this.getY(), r*2, r*2);
+        g2.fillOval((int) this.getX(),(int) this.getY(), size, size);
         g2.setColor(Color.black);
-        g2.drawOval((int) this.getX(),(int) this.getY(), r*2, r*2);
+        g2.drawOval((int) this.getX(),(int) this.getY(), size, size);
     }
 
     // GETTER AND SETTER
@@ -72,8 +72,8 @@ public class Ball {
             case 4: vec[0] -= grav; break;
         }
     }
-    public int getRadius() {
-        return r;
+    public int getSize() {
+        return size;
     }
     public void applyVec() {
         pos[0] += vec[0];

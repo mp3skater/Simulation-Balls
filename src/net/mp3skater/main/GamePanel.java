@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class GamePanel extends JPanel implements Runnable{
 
-    public static final int WIDTH = 900;
-    public static final int HEIGHT = 600;
+    public static final int WIDTH = 1200;
+    public static final int HEIGHT = 800;
     final int FPS = 60;
     Thread gameThread;
     Board board = new Board();
@@ -115,7 +115,7 @@ public class GamePanel extends JPanel implements Runnable{
                 b.setVecX(0);
             if(!borderActive)
                 b.addGravity(GRAV, grav_dir);
-            if(b.getPos()[1] < HEIGHT - b.getRadius() || b.getPos()[1] > 0)
+            if(b.getPos()[1] < HEIGHT - b.getSize() || b.getPos()[1] > 0)
                 b.addGravity(GRAV, grav_dir);
 
             if(borderActive)
@@ -123,8 +123,8 @@ public class GamePanel extends JPanel implements Runnable{
 
             // Throws balls towards the mouse
             if(mouse.pressed) {
-                b.addVec(FORCE*(mouse.x - b.getRadius() - b.getPos()[0])/(b.getRadius()+500),//Math.abs(mouse.x - b.getPos()[0]),
-                        FORCE*(mouse.y - b.getRadius() - b.getPos()[1])/(b.getRadius()+500)//Math.abs(mouse.y - b.getPos()[1])
+                b.addVec(FORCE*(mouse.x - (b.getSize()/2.0) - b.getPos()[0])/(b.getSize()+500),//Math.abs(mouse.x - b.getPos()[0]),
+                        FORCE*(mouse.y - (b.getSize()/2.0) - b.getPos()[1])/(b.getSize()+500)//Math.abs(mouse.y - b.getPos()[1])
                         );
             }
 
@@ -138,7 +138,7 @@ public class GamePanel extends JPanel implements Runnable{
         ball.applyVec();
         double x = ball.getX();
         double y = ball.getY();
-        int r = ball.getRadius();
+        int r = ball.getSize();
 
         if(x >= WIDTH - r) {
             ball.turnX();
