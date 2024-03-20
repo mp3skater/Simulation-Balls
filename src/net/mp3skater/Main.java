@@ -1,4 +1,4 @@
-package net.mp3skater.main;
+package net.mp3skater;
 
 import javax.swing.*;
 

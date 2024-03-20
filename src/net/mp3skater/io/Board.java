@@ -1,4 +1,6 @@
-package net.mp3skater.main;
+package net.mp3skater.io;
+
+import net.mp3skater.GamePanel;
 
 import java.awt.*;
 

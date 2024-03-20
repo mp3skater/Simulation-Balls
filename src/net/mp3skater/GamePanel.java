@@ -1,4 +1,9 @@
-package net.mp3skater.main;
+package net.mp3skater;
+
+import net.mp3skater.ball.Ball;
+import net.mp3skater.io.Board;
+import net.mp3skater.io.KeyHandler;
+import net.mp3skater.io.Mouse;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,6 +32,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     // BALLS
     public static ArrayList<Ball> balls = new ArrayList<>();
+    private static final Ball sun = Utils.createSun();
 
     // PAUSE
     private boolean exPause = false; // To see if Pause has been changed
@@ -179,6 +185,13 @@ public class GamePanel extends JPanel implements Runnable{
 
         // GRAV DIRECTION
         g2.drawString("Border: " + (borderActive ? "active" : "not active"), 70, 40);
+
+        // THE SUN
+        if(mouse.pressed) {
+            sun.setX(mouse.x - (double) sun.getSize() /2);
+            sun.setY(mouse.y - (double) sun.getSize() /2);
+            sun.draw(g2);
+        }
 
         // PAUSE
         if(isPause) {

@@ -1,4 +1,4 @@
-package net.mp3skater.main;
+package net.mp3skater.io;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

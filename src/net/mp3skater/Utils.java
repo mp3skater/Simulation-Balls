@@ -1,4 +1,7 @@
-package net.mp3skater.main;
+package net.mp3skater;
+
+import net.mp3skater.ball.Ball;
+import net.mp3skater.ball.BallColor;
 
 import java.util.ArrayList;
 
@@ -10,20 +13,19 @@ public class Utils {
                 Math.random()*460+70,
                 Math.random()*8+2,
                 Math.random()*8+2,
-                (int) (Math.random()*70+30),
+                (int) (Math.random()*30+30),
                 randomColor());
     }
     public static BallColor randomColor() {
-        int r = (int) (Math.random()*8);
+        int r = (int) (Math.random()*7);
 
         return switch (r) {
             case 0 -> BallColor.MAGENTA;
-            case 2 -> BallColor.YELLOW;
-            case 3 -> BallColor.GREEN;
-            case 4 -> BallColor.RED;
-            case 5 -> BallColor.ORANGE;
-            case 7 -> BallColor.PINK;
-            case 8 -> BallColor.CYAN;
+            case 1 -> BallColor.CYAN;
+            case 2 -> BallColor.GREEN;
+            case 3 -> BallColor.RED;
+            case 4 -> BallColor.ORANGE;
+            case 5 -> BallColor.PINK;
             default -> BallColor.BLUE;
         };
     }
@@ -31,5 +33,8 @@ public class Utils {
         for(int i = 0; i < numb_balls; i++) {
             balls.add(randomBall());
         }
+    }
+    public static Ball createSun() {
+        return new Ball(100, 100, 0, 0, 200, BallColor.YELLOW);
     }
 }
