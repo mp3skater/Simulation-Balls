@@ -27,7 +27,7 @@
 
 Sun-feature                                                                                               |  No-gravity-mode
 :--------------------------------------------------------------------------------------------------------:|:-------------------------:
-<img src="res/images/Screenshot_0.png" width="220" height="300" style="image-rendering: pixelated"><br/>  |  <img src="res/images/Screenshot_1.png" width="220" height="300" style="image-rendering: pixelated"><br/>
+<img src="res/images/Screenshot_0.png" width="300" height="220" style="image-rendering: pixelated"><br/>  |  <img src="res/images/Screenshot_1.png" width="300" height="220" style="image-rendering: pixelated"><br/>
 
 ---
 
