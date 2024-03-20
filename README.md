@@ -33,11 +33,11 @@ Sun-feature                                                                     
 
 ## Installation
 
-To use your own starting board replace the file: "res/board/board.txt", everything other then SPACE will be an alive cell.
+To customize the start (amount of balls, size, colors...) you can change the corristponding variables in src.net.mp3skater.ball.Ball and src.net.mp3skater.Gamepanel.
 
 ### Latest Release
 
-Get the latest builds of GetOP [from the GitHub Releases](https://github.com/mp3skater/GetOP-mod-data/releases).
+Get the latest build download [from the GitHub Releases](https://github.com/mp3skater/Simulation-Balls/releases).
 
 ## License
 
